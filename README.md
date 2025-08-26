@@ -6,7 +6,9 @@ Perfect for understanding Agents, Chains, Memory, Tools, Retrievers, and more, w
 
 🎯 Purpose
 
-LangChain Docs Bot helps developers quickly find accurate answers about LangChain concepts and usage.
+LangChain Docs Bot helps developers quickly find accurate answers about LangChain.
+
+Key Features:
 
 Uses official LangChain docs as a trusted knowledge source
 
@@ -16,31 +18,31 @@ Demonstrates a knowledge-based RAG workflow
 
 🧠 Methodology
 
-Document Selection
+1️⃣ Document Selection
 
 Only official LangChain documentation
 
 Focused topics: Introduction, Concepts, Agents, Tools, Retrievers, Tutorials, How-To
 
-Loading Documents
+2️⃣ Loading Documents
 
 Load pages using WebBaseLoader
 
 Curated 8–25 URLs for a compact, high-value knowledge base
 
-Cleaning & Chunking
+3️⃣ Cleaning & Chunking
 
 Remove navigation/boilerplate text
 
 Chunk documents: chunk_size=800, chunk_overlap=50
 
-Embedding & Storage
+4️⃣ Embedding & Storage
 
 Embed chunks using OpenAI or compatible embeddings
 
 Store in a vector database (Chroma, FAISS, etc.) for fast retrieval
 
-Query Handling
+5️⃣ Query Handling
 
 User questions trigger retrieval of relevant chunks
 
