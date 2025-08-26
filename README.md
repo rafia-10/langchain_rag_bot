@@ -1,53 +1,59 @@
+🚀 LangChain Docs Bot
 
-#LangChain Docs Bot
-##Purpose
+A developer assistant that answers questions using official LangChain documentation.
 
-The LangChain Docs Bot is a technical assistant designed to answer developer questions using the official LangChain documentation. It provides accurate guidance on concepts like Agents, Chains, Memory, Tools, and Retrievers, along with practical how-to instructions and installation guidance.
+Perfect for understanding Agents, Chains, Memory, Tools, Retrievers, and more, with practical examples and how-to guides.
 
-This project demonstrates how to build a knowledge-based assistant using a focused set of LangChain docs as the knowledge source.
+🎯 Purpose
 
-Methodology
+LangChain Docs Bot helps developers quickly find accurate answers about LangChain concepts and usage.
 
-Document Selection:
+Uses official LangChain docs as a trusted knowledge source
 
-Only official LangChain documentation is used.
+Answers questions on core concepts, tutorials, tools, and installation
 
-Key topics include Introduction, Concepts, Agents, Tools, Retrievers, Tutorials, and How-To guides.
+Demonstrates a knowledge-based RAG workflow
 
-Document Loading:
+🧠 Methodology
 
-Web pages are loaded using WebBaseLoader from LangChain.
+Document Selection
 
-Only a curated set of URLs (8–25 pages) are used to keep the knowledge base focused.
+Only official LangChain documentation
 
-Cleaning & Preprocessing:
+Focused topics: Introduction, Concepts, Agents, Tools, Retrievers, Tutorials, How-To
 
-Extra navigation and boilerplate text are removed.
+Loading Documents
 
-Each document is chunked into manageable pieces (e.g., 800 tokens with 50-token overlap) for embeddings.
+Load pages using WebBaseLoader
 
-Embedding & Storage:
+Curated 8–25 URLs for a compact, high-value knowledge base
 
-Chunks are embedded using a language model embedding (e.g., OpenAI text-embedding-3-small).
+Cleaning & Chunking
 
-Stored in a vector database (Chroma, FAISS, etc.) for retrieval.
+Remove navigation/boilerplate text
 
-Query Handling:
+Chunk documents: chunk_size=800, chunk_overlap=50
 
-User queries are processed by a retrieval-augmented generation (RAG) workflow.
+Embedding & Storage
 
-Relevant document chunks are retrieved and provided as context for the LLM to answer questions accurately.
+Embed chunks using OpenAI or compatible embeddings
 
-Prerequisites
+Store in a vector database (Chroma, FAISS, etc.) for fast retrieval
 
-Python 3.10 or higher
+Query Handling
+
+User questions trigger retrieval of relevant chunks
+
+LLM generates accurate, context-aware answers
+
+⚙️ Prerequisites
+
+Python 3.10+
 
 Pip package manager
 
-Access to an OpenAI API key (if using OpenAI embeddings)
+Internet access
 
-Internet connection for loading LangChain docs
+OpenAI API key (if using OpenAI embeddings)
 
-Installation
-
-Clone the repository:
+🛠️ Installation
