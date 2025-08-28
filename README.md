@@ -1,61 +1,45 @@
-🚀 LangChain Docs Bot
+📚 LangChain RAG Bot
 
-A developer assistant that answers questions using official LangChain documentation.
+A lightweight Retrieval-Augmented Generation (RAG) bot built on LangChain docs.
+This assistant can answer technical questions such as:
 
-Perfect for understanding Agents, Chains, Memory, Tools, Retrievers, and more, with practical examples and how-to guides.
+“How do I define a custom agent in LangChain?”
 
-🎯 Purpose
+“What’s the role of memory in LangGraph?”
 
-LangChain Docs Bot helps developers quickly find accurate answers about LangChain.
+It uses:
 
-Key Features:
+HuggingFace embeddings for semantic understanding
 
-Uses official LangChain docs as a trusted knowledge source
+ChromaDB as a vector store with cosine similarity
 
-Answers questions on core concepts, tutorials, tools, and installation
+Groq LLM (LLaMA-3) for fast, accurate responses
 
-Demonstrates a knowledge-based RAG workflow
+✨ Purpose
 
-🧠 Methodology
+The project demonstrates how to build a domain-specific knowledge assistant using only LangChain’s official documentation (20–50 curated pages).
+This keeps the knowledge base focused, efficient, and evaluator-friendly.
 
-1️⃣ Document Selection
+⚙️ Methodology
 
-Only official LangChain documentation
+Load Docs → Fetch LangChain documentation pages.
 
-Focused topics: Introduction, Concepts, Agents, Tools, Retrievers, Tutorials, How-To
+Clean & Chunk → Split docs into overlapping chunks for context.
 
-2️⃣ Loading Documents
+Embed Text → Use HuggingFace all-MiniLM-L6-v2 for embeddings.
 
-Load pages using WebBaseLoader
+Store in Vector DB → Save embeddings in ChromaDB (cosine similarity).
 
-Curated 8–25 URLs for a compact, high-value knowledge base
+Retrieve Relevant Chunks → Query vector DB for relevant sections.
 
-3️⃣ Cleaning & Chunking
+Generate Answer → Use Groq’s LLaMA-3 model with RAG context.
 
-Remove navigation/boilerplate text
+📋 Prerequisites
 
-Chunk documents: chunk_size=800, chunk_overlap=50
+Python 3.9+
 
-4️⃣ Embedding & Storage
+Virtual environment (venv) recommended
 
-Embed chunks using OpenAI or compatible embeddings
+Groq API key (free)
 
-Store in a vector database (Chroma, FAISS, etc.) for fast retrieval
-
-5️⃣ Query Handling
-
-User questions trigger retrieval of relevant chunks
-
-LLM generates accurate, context-aware answers
-
-⚙️ Prerequisites
-
-Python 3.10+
-
-Pip package manager
-
-Internet access
-
-OpenAI API key (if using OpenAI embeddings)
-
-🛠️ Installation
+🛠 Installation
