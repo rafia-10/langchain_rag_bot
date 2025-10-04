@@ -24,6 +24,13 @@ This keeps the knowledge base focused, efficient, and evaluator-friendly.
 
 Load Docs → Fetch LangChain documentation pages.
 
+## 📌 Project Scope
+- Domain: LangChain official documentation only
+- Knowledge Base: 20–50 curated pages
+- Retrieval: ChromaDB embeddings with cosine similarity
+- Model: Groq LLaMA-3 for answer generation
+
+
 Clean & Chunk → Split docs into overlapping chunks for context.
 
 Embed Text → Use HuggingFace all-MiniLM-L6-v2 for embeddings.
@@ -122,5 +129,12 @@ No paid services — HuggingFace (free embeddings) + Groq (free API key).
 
 ## 📜 License
 This project is licensed under the MIT License – see the LICENSE file for details.
+
+## 📌 Project Scope
+- Domain: LangChain official documentation only
+- Knowledge Base: 20–50 curated pages
+- Retrieval: ChromaDB embeddings with cosine similarity
+- Model: Groq LLaMA-3 for answer generation
+
 
 
