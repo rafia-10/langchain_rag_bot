@@ -120,5 +120,7 @@ Uses cosine similarity for retrieval.
 
 No paid services — HuggingFace (free embeddings) + Groq (free API key).
 
+## 📜 License
+This project is licensed under the MIT License – see the LICENSE file for details.
 
 
