@@ -6,6 +6,8 @@ from chunker import chunk_docs
 from embedder import get_embedder
 from vectorstore import build_vectorstore
 from qa_chain import build_qa_chain
+from query_processor import clean_query, rephrase_query_with_llm
+
 
 def run_bot():
     # Step 1: Load docs
@@ -22,12 +24,18 @@ def run_bot():
 
     # Step 5: Setup QA chain
     qa = build_qa_chain(vectorstore)
+    while True:
+        raw_query = input("\n🤔 Your Question (type 'exit' to quit): ")
+        if raw_query.lower() == "exit":
+            break
 
-    # Step 6: Example query
-    query = "How do I define a custom agent?"
-    print("\n🤔 User Question:", query)
-    answer = qa.run(query)
-    print("\n💡 Answer:", answer)
+        query = clean_query(raw_query)
+        query = rephrase_query_with_llm(query)  # ✅ smarter preprocessing
+        # print("⚙️ Final Processed Query:", query)
+
+        answer = qa.run(query)
+        print("\n💡 Answer:", answer)
+
 
 if __name__ == "__main__":
     run_bot()
